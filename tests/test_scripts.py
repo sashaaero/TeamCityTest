@@ -21,7 +21,10 @@ class Test(unittest.TestCase):
         self.assertTrue('You cannot divide by 0' in str(context.exception))
 
     def test_pow(self):
-        self.assertTrue(pow(10, 2), 100)
+        self.assertEqual(pow(10, 2), 100)
+
+    def test_mod(self):
+        self.assertEqual(mod(10, 2), 0)
 
 
 if __name__ == '__main__':
