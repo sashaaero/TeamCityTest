@@ -33,6 +33,7 @@ if __name__ == '__main__':
         from teamcity.unittestpy import TeamcityTestRunner
         if is_running_under_teamcity():
             runner = TeamcityTestRunner()
+            print("Teamcity detected")
         else:
             runner = unittest.TextTestRunner()
     except ModuleNotFoundError:
