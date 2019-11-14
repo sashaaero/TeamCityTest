@@ -22,3 +22,15 @@ class Test(unittest.TestCase):
 
     def test_pow(self):
         self.assertTrue(pow(10, 2), 100)
+
+
+if __name__ == '__main__':
+    try:
+        from teamcity import is_running_under_teamcity
+        from teamcity.unittestpy import TeamcityTestRunner
+        if is_running_under_teamcity():
+            runner = TeamcityTestRunner()
+        else:
+            runner = unittest.TextTestRunner()
+    except ModuleNotFoundError:
+        runner = unittest.TextTestRunner()
