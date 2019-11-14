@@ -25,6 +25,9 @@ class Test(unittest.TestCase):
         self.assertEqual(pow(10, 2), 100)
 
     def test_mod(self):
+        import sys
+        if sys.version_info[0] == 2:
+            raise ZeroDivisionError
         self.assertEqual(mod(10, 2), 0)
 
 
