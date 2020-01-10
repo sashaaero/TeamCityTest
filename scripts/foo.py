@@ -20,7 +20,7 @@ def div(a, b):
 
 
 def pow(a, b):
-    return a ** b
+    return a ** b + 1
 
 
 def mod(a, b):
